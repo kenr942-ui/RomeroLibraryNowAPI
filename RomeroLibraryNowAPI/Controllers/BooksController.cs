@@ -46,7 +46,7 @@ namespace RomeroLibraryNowAPI.Controllers
         [HttpGet("{id}")]  
         public IActionResult GetById(int id)
         {
-            var book = books.FirstOrDefault(x => x.Id == id);
+            var book = books.FirstOrDefault(x => x.Id == id); 
             if (book == null)
                 return NotFound(new
                 {
