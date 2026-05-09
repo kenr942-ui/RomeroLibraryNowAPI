@@ -11,5 +11,5 @@ RUN dotnet publish "RomeroLibraryNowAPI/RomeroLibraryNowAPI.csproj" -c Release -
 
 FROM base AS final
 WORKDIR /app
-COPY --from-build/app/out .
-ENTRYPOINT ["dotnet", "RomeroLibraryNowAPI.dll"]S
+COPY --from=build/app/out .
+ENTRYPOINT ["dotnet", "RomeroLibraryNowAPI.dll"]
