@@ -6,8 +6,8 @@ ENV ASPNETCORE_URLS=http://+:8080
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 COPY . .
-RUN dotnet restore "RomeroLibraryNowAPI.csproj"
-RUN dotnet publish "RomeroLibraryNowAPI.csproj" -c Release -o /app/out
+RUN dotnet restore "RomeroLibraryNowAPI/RomeroLibraryNowAPI.csproj"
+RUN dotnet publish "RomeroLibraryNowAPI/RomeroLibraryNowAPI.csproj" -c Release -o /app/out
 
 FROM base AS final
 WORKDIR /app
